@@ -1,8 +1,8 @@
+import React from "react"
 import { CSSReset, ThemeProvider } from "@chakra-ui/core"
 import { render, RenderOptions } from "@testing-library/react"
-import React from "react"
 
-import theme from "./theme"
+import { theme } from "./theme"
 
 const AllTheProviders = ({ children }: { children?: React.ReactNode }) => (
   <ThemeProvider theme={theme}>

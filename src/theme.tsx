@@ -1,10 +1,24 @@
 import React from "react"
-import { theme } from "@chakra-ui/core"
+import { theme as chakraTheme, DefaultTheme } from "@chakra-ui/core"
 
-export default {
-  ...theme,
+export interface Config {
+  color: string
+  bg: string
+  borderColor: string
+  placeholderColor: string
+}
+
+export interface Theme extends DefaultTheme {
+  config: {
+    light: Config
+    dark: Config
+  }
+}
+
+export const theme: Theme = {
+  ...chakraTheme,
   icons: {
-    ...theme.icons,
+    ...chakraTheme.icons,
     logo: {
       path: (
         <g fill="currentColor">
@@ -14,6 +28,20 @@ export default {
         </g>
       ),
       viewBox: "0 0 841.9 595.3",
+    },
+  },
+  config: {
+    light: {
+      color: chakraTheme.colors.gray[800],
+      bg: chakraTheme.colors.white,
+      borderColor: chakraTheme.colors.gray[200],
+      placeholderColor: chakraTheme.colors.gray[400],
+    },
+    dark: {
+      color: chakraTheme.colors.whiteAlpha[900],
+      bg: chakraTheme.colors.gray[800],
+      borderColor: chakraTheme.colors.whiteAlpha[300],
+      placeholderColor: chakraTheme.colors.whiteAlpha[400],
     },
   },
 }
