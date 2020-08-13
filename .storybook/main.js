@@ -1,12 +1,20 @@
 module.exports = {
-	stories: ["../src/**/*.stories.(ts|tsx|js|jsx)"],
+	stories: ["../src/**/*.stories.@(ts|tsx|js|jsx)"],
 	addons: [
+		// Preset
 		"@storybook/preset-create-react-app",
-		"@storybook/addon-a11y/register",
+
+		// Toolbar
+		"@storybook/addon-docs",
+		"@storybook/addon-viewport",
+
+		// Panel
+		"@storybook/addon-controls",
 		"@storybook/addon-actions",
-		"@storybook/addon-knobs/register",
-		"@storybook/addon-links",
 		"@storybook/addon-storysource",
-		"@storybook/addon-viewport/register",
+		"@storybook/addon-a11y",
+
+		// Other Addons
+		"@storybook/addon-links",
 	],
 }
